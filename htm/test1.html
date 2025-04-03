@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Thuyết trình về Tin học</title>
+  <!-- Import Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      padding: 0;
+      margin: 0;
+      background:  url('bg.jfif') fixed;
+      background-size: cover;
+      line-height: 1.7;
+      color: #333;
+      position: relative;
+    }
+    
+
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      background: rgba(255, 255, 255, 0.7);
+      border-radius: 25px;
+      overflow: hidden;
+      position: relative;
+      z-index: 1;
+      backdrop-filter: blur(2px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+    
+    header {
+      background: linear-gradient(135deg, #1a2980, #26d0ce);
+      margin: 0 0;
+      color: white;
+      padding: 20px 20px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+   
+      margin-bottom: 20px;
+    }
+
+    header h1 {
+      font-size: 3em;
+      font-weight: 800;
+      margin-bottom: 20px;
+      font-family: 'Montserrat';
+      background: linear-gradient(to right, #fff, #f3f9ff);
+      background-clip: text;
+     
+    }
+
+    
+    nav {
+      background: #2980b9;
+      position:inherit;
+      z-index: 100;
+      /* border-radius: 50px; */
+    }
+    
+    nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+     
+    }
+    
+    nav ul li {
+      flex: 1 0 auto;
+      transition: all 0.3s ease;
+    }
+    
+    nav ul li a {
+      display: block;
+      padding: 18px 25px;
+      color: #fff;
+      text-decoration: none;
+      text-align: center;
+      transition: all 0.3s ease;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      position: relative;
+
+    }
+    
+    
+    nav ul li a:hover {
+      background: rgba(26, 188, 156, 0.8);
+      transform: translateY(-3px);
+    }
+    
+    nav ul li a:hover::before {
+      width: 70%;
+    }
+    
+
+    section {
+      padding: 35px 30px;
+      text-align: justify;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    
+    section:last-child {
+      border-bottom: none;
+    }
+    
+    section h2 {
+      color: #3498db;
+      font-size: 2.2em;
+      margin-bottom: 20px;
+      border-bottom: 3px solid #3498db;
+      display: inline-block;
+      padding-bottom: 8px;
+      font-family: 'Montserrat', sans-serif;
+      position: relative;
+    }
+    
+    section h2::after {
+      content: "";
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 50%;
+      height: 3px;
+      background: #2ecc71;
+    }
+    
+    section h3 {
+      color: #2980b9;
+      font-size: 1.6em;
+      margin-top: 35px;
+      margin-bottom: 15px;
+      font-family: 'Montserrat', sans-serif;
+      position: relative;
+      padding-left: 15px;
+    }
+    
+    section h3::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 5px;
+      background: linear-gradient(to bottom, #3498db, #2ecc71);
+      border-radius: 3px;
+    }
+    
+    section ul {
+      margin-left: 25px;
+      list-style-type: disc;
+    }
+    
+    /* Footer */
+    footer {
+      background: linear-gradient(135deg, #2c3e50, #34495e);
+      color: #fff;
+      text-align: center;
+      padding: 25px;
+      font-size: 0.9em;
+      position: relative;
+    }
+    
+
+    
+    footer p {
+      margin: 0;
+      letter-spacing: 0.5px;
+    }
+    
+    p {
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+    
+    span {
+      color: rgb(146, 8, 128);
+      font-weight: 600;
+    }
+    
+    .imgbig {
+      display: block;
+      margin: 20px auto;
+      max-width: 90%;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .imgbig:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+    
+    a {
+      color: #3498db;
+      text-decoration: none;
+      transition: color 0.3s ease;
+      font-weight: 600;
+    }
+    
+    a:hover {
+      color: #2ecc71;
+      text-decoration: underline;
+    }
+    
+  
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    section {
+      animation: fadeIn 0.6s ease forwards;
+    }
+    
+    
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: linear-gradient(135deg, #3498db, #2ecc71);
+      color: white;
+      width: 50px;
+      height: 50px;
+      text-align: center;
+      line-height: 50px;
+      border-radius: 50%;
+      font-size: 20px;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 99;
+    }
+    
+    .back-to-top.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .back-to-top:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+  </style>
+</head>
+<body>
+  <div class="back-to-top">↑</div>
+  
+  <div class="container">
+    <header>
+      <h1>ỨNG DỤNG MÔ PHỎNG TRONG GIÁO DỤC</h1>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="#gioithieu">Giới thiệu</a></li>
+        <li><a href="#noidung">Nội dung</a></li>
+        <li><a href="#ketluan">Kết luận</a></li>
+        <li><a href="#lienhe">Liên hệ</a></li>
+      </ul>
+    </nav>
+    
+
+    <!-- <section id="gioithieu">
+      <h2>Giới thiệu</h2>
+      <p>Bài thuyết trình này sẽ giúp bạn sử dụng một vài phần mềm giáo dục và chỉ ra được một số lợi ích của chúng.</p>
+    </section> -->
+    
+
+    <section id="noidung">
+      <!-- <h2>Nội dung chính</h2> -->
+      <h3>1. GIỚI THIỆU MỘT SỐ PHẦN MỀM MÔ PHỎNG TRONG GIÁO DỤC</h3>
+      <p> &emsp;- Trong nhà trường, nhiều môn học có sử dụng phần mềm mô phỏng ứng dụng trong dạy và học. Ví dụ:<br>
+        &emsp;&emsp; + <span><strong>GeoGebra</strong></span>: Phần mềm mô phỏng ứng dụng trong dạy học, đặc biệt trong toán học. <br>
+        &emsp;&emsp;+ <span><strong>Bộ phần mềm và công cụ PhET</strong></span>: cung cấp các công cụ và phần mềm mô phỏng tương tác trực tuyến đa lĩnh vực (Vật lí, Hóa học, Toán học, …)
+        </p>
+        <img class="imgbig" src="Capture.PNG" alt="Ảnh lỗi"><br>
+      <p>&emsp;&emsp; + <span><strong>Phần mềm Avogadro</strong></span>: cho phép mô phỏng và thiết kế phân tử hóa học ở các cấp độ khác nhau. <br>
+        &emsp;&emsp; + <span><strong>Phần mềm Gplates</strong></span>: cho phép mô phỏng sự biến đổi của các lục địa, địa mạo và địa chất.<br>
+        &emsp;&emsp; + <span><strong>Phần mềm Yenka</strong></span>: cho phép quan sát trực quan các thí nghiệm thuộc các lĩnh vực Toán, Lí, Hóa, …<br>
+        &emsp;&emsp; + <span><strong>Các phần mềm mô phỏng của Concord Consortium</strong></span>: cho phép tương tác với các phân tử hoặc hiện tượng vĩ mô theo nhiều cách khác nhau.
+        </p>
+
+        <img class="imgbig" src="C1.PNG" alt="Ảnh lỗi"><br>
+      <p>
+        &emsp; - Các phần mềm này đều miễn phí. Một số cần tải về để cài đặt và sử dụng trên máy tính cá nhân, số còn lại có thể sử dụng trực tuyến nếu có kết nối Internet.<br>
+        &emsp; - Sau đây ta sẽ làm quen với <span><strong>bộ công cụ PhET</strong></span>: <a href="https://phet.colorado.edu" >phet.colorado.edu</a> cho phép tương tác với nhiều mô hình khoa học và toán học bằng cách thay đổi tham số và điều kiện, từ đó quan sát kết quả một cách trực quan.<br>
+        &emsp;&emsp; + Mô phỏng về lực và chuyển động: với trò chơi Khách bộ hành, giúp diễn giải, tiên đoán và xác định, vận tốc và gia tốc cho các trường hợp thường gặp:
+      </p>
+        <img class="imgbig" src="C2.PNG" alt="Ảnh lỗi"><br>
+      <p>
+        &emsp;&emsp; + Mô phỏng sự chuyển hóa năng lượng: giúp người dùng làm quen với các dạng năng lượng và sự chuyển hóa giữa chúng:
+      </p>
+      <img class="imgbig" src="C3.PNG" alt="Ảnh lỗi"><br>
+      <p>
+        &emsp;&emsp; + Mô phỏng chuyển động (vận tốc, quỹ đạo,...) của các vật thể trong không gian trong mối quan hệ với lực hấp dẫn:
+      </p>
+      <img class="imgbig" src="C4.PNG" alt="Ảnh lỗi"><br>
+      <h3>2. THỰC HÀNH: Sử dụng một số phần mềm mô phỏng trong giáo dục</h3>
+      <p>&emsp;(Phần mềm mô phỏng trong lĩnh vực giáo dục được sử dụng để thực hành là phần mềm trực tuyến PhET).<br>
+      &emsp;<span><strong>Nhiệm vụ 1: Sử dụng phần mềm mô phỏng toán học</strong></span><br>
+      &emsp;<span><i><strong>Yêu cầu: </strong></i></span> Biết cách sử dụng phần mềm mô phỏng toán học. <br>
+      &emsp;<span><i><strong>Hướng dẫn: </strong></i></span><br>
+      &emsp;&emsp;<span><i><strong>Bước 1. </strong></i></span> Truy cập trang web <a href="https://phet.colorado.edu/vi/">phet.colorado.edu</a>. <br>
+      &emsp;&emsp;<span><i><strong>Bước 2. </strong></i></span> Trên trang chủ PhET, nháy chuột chọn biểu tượng môn Toán để mở danh sách các phần mềm mô phỏng toán học. <br>
+      &emsp;&emsp;<span><i><strong>Bước 3. </strong></i></span> Nháy chuột chọn mô phỏng Vòng tròn lượng giác (Hình 30.6).<br>
+      <img class="imgbig" src="C5.PNG" alt="Ảnh lỗi"><br>
+      &emsp;&emsp;<span><i><strong>Bước 4. </strong></i></span> Đọc hiểu các thông tin giới thiệu về phần mềm. Sau đó, nháy chuột chọn nút <img class="imgbig" src="C6.PNG" alt="Ảnh lỗi">  (hình 30.7) để kích hoạt mô phỏng.<br>
+      <img class="imgbig" src="C7.PNG" alt="Ảnh lỗi"><br>
+      &emsp;&emsp;<span><i><strong>Bước 5. </strong></i></span> Tương tác với phần mềm mô phỏng bằng cách thay đổi các thông số (Hình 30.9). Ghi lại khoảng 5 kết quả quan sát được vào bảng theo mẫu ở Hình 30.8.<br>
+      <img class="imgbig" src="C8.PNG" alt="Ảnh lỗi"><br>
+      &emsp;&emsp;<span><i><strong>Bước 6. </strong></i></span> Thảo luận và nhận xét về lợi ích cũng như tính ứng dụng của mô phỏng Vòng tròn lượng giác. So sánh việc thực hiện mô phỏng tương tự ở phần mềm khác, chẳng hạn GeoGebra. <br>
+      &emsp;<span><i><strong>Nhiệm vụ 2: Khám phá mô phỏng khoa học </strong></i></span><br>
+      &emsp;<span><i><strong>Yêu cầu: </strong></i></span><br>
+      &emsp;&emsp;Thực hiện theo hướng dẫn để khám phá một mô phỏng khoa học bất kì. <br>
+      &emsp;<span><i><strong>Hướng dẫn: </strong></i></span><br>
+      &emsp;&emsp;<span><i><strong>Bước 1. </strong></i></span> Truy cập trang chủ của PhET và nháy chuột chọn biểu tượng môn thuộc lĩnh vực khoa học mà em thích. <br>
+      &emsp;&emsp;<span><i><strong>Bước 2. </strong></i></span> Nháy chuột chọn một phần mềm mô phỏng trong bộ sưu tập của môn học đó mà em muốn khám phá. <br>
+      &emsp;&emsp;<span><i><strong>Bước 3. </strong></i></span> Quan sát tương tác và thảo luận để trả lời các câu hỏi sau: <br>
+      &emsp;&emsp;&emsp;1. Có thể thay đổi các thông số nào của phần mềm? <br>
+      &emsp;&emsp;&emsp;2. Tương tác với phần mềm bằng cách nào? <br>
+      &emsp;&emsp;&emsp;3. Kết quả của phần mềm bao gồm những gì? <br>
+      &emsp;&emsp;&emsp;4. Lợi ích của phần mềm này là gì? <br>
+      &emsp;&emsp;&emsp;5. Những hạn chế nếu có khi tạo ra thí nghiệm này ngoài đời thực là gì? <br>
+&emsp;Gợi ý một vài tương tác có thể thực hiện với phần mềm mô phỏng PhET: <br>
+ Các phần mềm mô phỏng trong PhET cho phép người dùng thay đổi các thông số cũng như các yếu tố trong mô hình ảo để quan sát, dự báo kết quả hoạt động của mô hình. Chẳng hạn, với phần mềm mô phỏng Các dạng năng lượng và sự chuyển hóa năng lượng ở Hình 30.4, khi nháy chuột vào nút <img src="C9.PNG" alt="Ảnh lỗi"> ở vị trí bên dưới, chính giữa màn hình, mô hình ảo sẽ hoạt động, cho ta thấy sự chuyển hóa năng lượng như sau: <br>
+- Khi người đạp xe, <strong>hóa năng</strong> (<img src="C10.PNG" alt="Ảnh lỗi">) có trong thức ăn con người được chuyển thành <strong>cơ năng</strong> (<img src="C11.PNG" alt="Ảnh lỗi">). Cơ năng làm quay máy phát 
+
+    </p>
+    </section>
+    
+
+    <section id="ketluan">
+      <h2>Kết luận</h2>
+      <p>&emsp;Phần mềm mô phỏng trong giáo dục giúp học sinh quan sát trực quan, tương tác với các hiện tượng khoa học.<br>
+
+        &emsp;Một số phần mềm phổ biến: PhET (đa lĩnh vực), Avogadro (hóa học), Gplates (địa chất), Yenka (Toán, Lý, Hóa), Concord Consortium.<br>
+        
+        &emsp;Thực hành với PhET:<br>
+        
+        &emsp;&emsp;1.Mô phỏng toán học: Truy cập trang PhET, chọn mô phỏng Vòng tròn lượng giác, thay đổi thông số và ghi kết quả.<br>
+        
+        &emsp;&emsp;2.Mô phỏng khoa học: Chọn mô phỏng yêu thích, tương tác và trả lời câu hỏi về thông số, kết quả, lợi ích, hạn chế.<br>
+        
+        &emsp;Lợi ích: Học tập trực quan, dễ hiểu, không cần thí nghiệm thực tế.<br>
+    </section>
+    
+    <!-- <section id="lienhe">
+      <h2>Liên hệ</h2>
+      <p>Email: nhatminhdo051007@gmail.com</p>
+      <p>Số điện thoại: 0832 438 123</p>
+    </section> -->
+    
+    <footer>
+      <p>Thuyết trình về ứng dụng mô phỏng trong giáo dục</p>
+    </footer>
+  </div>
+
+  <script>
+    const backToTopButton = document.querySelector('.back-to-top');
+    
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        backToTopButton.classList.add('active');
+      } else {
+        backToTopButton.classList.remove('active');
+      }
+    });
+    
+    backToTopButton.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+    
+  </script>
+</body>
+</html>
